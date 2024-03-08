@@ -60,6 +60,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.flatpak.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -89,11 +90,22 @@
     packages = with pkgs; [
       firefox
       thunderbird
+      discord
+      telegram-desktop
+      tutanota-desktop
+      xivlauncher
     ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "emily" ];
+  };
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -109,7 +121,12 @@
     carla
     gnumake
     stow
+    clang
   ];
+
+  environment.shells = with pkgs; [ zsh ];
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh.enable = true;
 
   hardware.opengl = {
     enable = true;
@@ -150,6 +167,12 @@
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
   # Some programs need SUID wrappers, can be configured further or are
