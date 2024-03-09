@@ -94,6 +94,7 @@
       telegram-desktop
       tutanota-desktop
       xivlauncher
+      spotify
     ];
   };
 
@@ -122,7 +123,18 @@
     gnumake
     stow
     clang
+    wineWowPackages.stable
+    winetricks
+    lsp-plugins
+    calf
+    protontricks
+    mangohud
+    airwindows-lv2
+    x42-plugins
+    guitarix
   ];
+
+  programs.gamemode.enable = true;
 
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
@@ -173,6 +185,14 @@
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
+
+  environment.variables = {
+    DSSI_PATH   = "$HOME/.dssi:$HOME/.nix-profile/lib/dssi:/run/current-system/sw/lib/dssi";
+    LADSPA_PATH = "$HOME/.ladspa:$HOME/.nix-profile/lib/ladspa:/run/current-system/sw/lib/ladspa";
+    LV2_PATH    = "$HOME/.lv2:$HOME/.nix-profile/lib/lv2:/run/current-system/sw/lib/lv2";
+    LXVST_PATH  = "$HOME/.lxvst:$HOME/.nix-profile/lib/lxvst:/run/current-system/sw/lib/lxvst";
+    VST_PATH    = "$HOME/.vst:$HOME/.nix-profile/lib/vst:/run/current-system/sw/lib/vst";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
