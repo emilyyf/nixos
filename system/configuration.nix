@@ -11,6 +11,7 @@
 			./audio.nix
 			./games.nix
 			./video.nix
+			./dwm.nix
     ];
 
   # Bootloader.
@@ -91,6 +92,7 @@
     gnumake
     stow
     clang
+    ripgrep
   ];
 
 
