@@ -14,21 +14,25 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
 	let
+		lib = nixpkgs.lib;
 		system = "x86_64-linux";
-	  pkgs = nixpkgs.legacyPackages.${system};
+		pkgs = import nixpkgs {
+			inherit system;
+			config = { allowUnfree = true; };
+		};
 	in {
     nixosConfigurations = {
-      achird = nixpkgs.lib.nixosSystem {
+      achird = lib.nixosSystem {
 				inherit system;
 				specialArgs = {inherit inputs;};
-        modules = [ ./configuration.nix ];
+        modules = [ ./system/configuration.nix ];
       };
     };
 		homeConfigurations = {
       emily = home-manager.lib.homeManagerConfiguration {
 				inherit pkgs;
 				extraSpecialArgs = {inherit inputs;};
-        modules = [ ./home.nix ];
+        modules = [ ./users/emily/home.nix ];
       };
 		};
   };
