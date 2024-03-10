@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -17,7 +17,10 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
+		inputs.nix-citizen.packages.${system}.star-citizen
+		inputs.nix-citizen.packages.${system}.star-citizen-helper
+		inputs.nix-citizen.packages.${system}.lug-helper
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -72,4 +75,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+	targets.genericLinux.enable = true;
 }

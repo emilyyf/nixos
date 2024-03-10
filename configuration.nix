@@ -132,6 +132,7 @@
     airwindows-lv2
     x42-plugins
     guitarix
+    nerdfonts
   ];
 
   programs.gamemode.enable = true;
@@ -223,4 +224,9 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  nix.settings = {
+    substituters = ["https://nix-gaming.cachix.org"];
+    trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
+  };
 }
