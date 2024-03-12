@@ -37,6 +37,8 @@
     x42-plugins
     guitarix
     nerdfonts
+    gamescope
+    htop
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
