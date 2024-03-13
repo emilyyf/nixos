@@ -13,8 +13,8 @@
 			pkgs.dwm.overrideAttrs {
 				src = pkgs.fetchgit {
 					url = /home/emily/Stuff/dwm;
-					rev = "a371440a73084d74b2d8a985b0b16fe804d239d2";
-					hash = "sha256-Z9Wj1rX5CNZkEYi1/ttUQSmQS01NYQgjs7mcfrxQB4o=";
+					rev = "6e2079cbae9f0c6eddb8bc8641ac8c3172d62d88";
+					hash = "sha256-MkDUa+diu4BSdLpUyZ2tFxv9X+wOKN99U4YT6qqcFR8=";
 				};
 			};
 	};
