@@ -5,7 +5,20 @@
 		dmenu
 		st
 		feh
+		gnome.gnome-keyring
 	];
+
+	services.gnome.gnome-keyring.enable = true;
+
+	xdg.portal.enable = true;
+	xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+	# xdg.portal.configPackages = [ "xdg-desktop-portal-gtk" ];
+	xdg.portal.config = {
+		common = {
+			default = [ "gtk" ];
+		};
+	};
+	services.xserver.displayManager.lightdm.enable = true;
 
 	services.xserver.windowManager.dwm = {
 		enable = true;

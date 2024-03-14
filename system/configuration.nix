@@ -46,10 +46,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -67,7 +63,7 @@
   users.users.emily = {
     isNormalUser = true;
     description = "Emily";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" "audio" "video" ];
     packages = with pkgs; [ ];
   };
 
