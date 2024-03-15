@@ -39,6 +39,7 @@
     nerdfonts
     gamescope
     htop
+		prismlauncher
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -58,6 +59,11 @@
 
   home.sessionVariables = {
   };
+
+	xsession.profileExtra = ''
+		eval $(${pkgs.gnome.gnome-keyring}/bin/gnome-keyring-daemon --daemonize --components=ssh,secrets)
+		export SSH_AUTH_SOCK
+	'';
 
   programs.home-manager.enable = true;
 

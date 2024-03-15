@@ -6,6 +6,7 @@
 		st
 		feh
 		gnome.gnome-keyring
+		gcr
 	];
 
 	services.gnome.gnome-keyring.enable = true;
