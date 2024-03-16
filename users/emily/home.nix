@@ -1,6 +1,11 @@
 { config, pkgs, inputs, ... }:
 
 {
+  imports =
+    [
+      ./sh.nix
+    ];
+
   home.username = "emily";
   home.homeDirectory = "/home/emily";
 
