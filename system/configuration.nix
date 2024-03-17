@@ -114,4 +114,10 @@
     substituters = ["https://nix-gaming.cachix.org"];
     trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
   };
+
+  fileSystems."/run/media/emily/Games" = {
+    device = "/dev/disk/by-label/Games";
+    fsType = "ext4";
+    options = [ "nofail" ];
+  };
 }
