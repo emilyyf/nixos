@@ -19,7 +19,7 @@
 			default = [ "gtk" ];
 		};
 	};
-	services.xserver.displayManager.lightdm.enable = true;
+	services.xserver.displayManager.sddm.enable = true;
 
 	services.xserver.windowManager.dwm = {
 		enable = true;
