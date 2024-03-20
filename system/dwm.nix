@@ -7,6 +7,8 @@
 		feh
 		gnome.gnome-keyring
 		gcr
+		dunst
+		picom
 	];
 
 	services.gnome.gnome-keyring.enable = true;
