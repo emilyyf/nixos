@@ -1,18 +1,19 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-			./audio.nix
-			./games.nix
-			./video.nix
-			./dwm.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./audio.nix
+    ./games.nix
+    ./video.nix
+    ./dwm.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -67,8 +68,8 @@
   users.users.emily = {
     isNormalUser = true;
     description = "Emily";
-    extraGroups = [ "networkmanager" "wheel" "gamemode" "audio" "video" ];
-    packages = with pkgs; [ ];
+    extraGroups = ["networkmanager" "wheel" "gamemode" "audio" "video"];
+    packages = with pkgs; [];
   };
 
   # Allow unfree packages
@@ -77,7 +78,7 @@
   programs._1password.enable = true;
   programs._1password-gui = {
     enable = true;
-    polkitPolicyOwners = [ "emily" ];
+    polkitPolicyOwners = ["emily"];
   };
 
   # List packages installed in system profile. To search, run:
@@ -95,8 +96,7 @@
     ripgrep
   ];
 
-
-  environment.shells = with pkgs; [ zsh ];
+  environment.shells = with pkgs; [zsh];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
@@ -108,7 +108,7 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   nix.settings = {
     substituters = ["https://nix-gaming.cachix.org"];
@@ -118,6 +118,6 @@
   fileSystems."/run/media/emily/Games" = {
     device = "/dev/disk/by-label/Games";
     fsType = "ext4";
-    options = [ "nofail" ];
+    options = ["nofail"];
   };
 }

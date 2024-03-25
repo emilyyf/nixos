@@ -1,10 +1,12 @@
-{ config, pkgs, inputs, ... }:
-
 {
-  imports =
-    [
-      ./sh.nix
-    ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    ./sh.nix
+  ];
 
   home.username = "emily";
   home.homeDirectory = "/home/emily";
@@ -21,17 +23,17 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-		inputs.nix-citizen.packages.${system}.star-citizen
-		inputs.nix-citizen.packages.${system}.star-citizen-helper
-		inputs.nix-citizen.packages.${system}.lug-helper
-		firefox
-		thunderbird
-		discord
-		telegram-desktop
-		tutanota-desktop
-		xivlauncher
-		spotify
-		vesktop
+    inputs.nix-citizen.packages.${system}.star-citizen
+    inputs.nix-citizen.packages.${system}.star-citizen-helper
+    inputs.nix-citizen.packages.${system}.lug-helper
+    firefox
+    thunderbird
+    discord
+    telegram-desktop
+    tutanota-desktop
+    xivlauncher
+    spotify
+    vesktop
     wineWowPackages.stable
     winetricks
     lsp-plugins
@@ -44,12 +46,12 @@
     nerdfonts
     gamescope
     htop
-		prismlauncher
-		spectacle
-		xsel
-		xclip
-		alejandra
-		teamviewer
+    prismlauncher
+    spectacle
+    xsel
+    xclip
+    alejandra
+    teamviewer
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -70,14 +72,14 @@
   home.sessionVariables = {
   };
 
-	xsession.profileExtra = ''
-		eval $(${pkgs.gnome.gnome-keyring}/bin/gnome-keyring-daemon --daemonize --components=ssh,secrets)
-		export SSH_AUTH_SOCK
-	'';
+  xsession.profileExtra = ''
+    eval $(${pkgs.gnome.gnome-keyring}/bin/gnome-keyring-daemon --daemonize --components=ssh,secrets)
+    export SSH_AUTH_SOCK
+  '';
 
   programs.home-manager.enable = true;
 
-	targets.genericLinux.enable = true;
+  targets.genericLinux.enable = true;
 
-	xdg.enable = true;
+  xdg.enable = true;
 }
