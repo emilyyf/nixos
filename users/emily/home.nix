@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./sh.nix
+    ./zellij.nix
   ];
 
   home.username = "emily";
