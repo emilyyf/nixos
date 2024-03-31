@@ -68,7 +68,7 @@
   users.users.emily = {
     isNormalUser = true;
     description = "Emily";
-    extraGroups = ["networkmanager" "wheel" "gamemode" "audio" "video"];
+    extraGroups = ["networkmanager" "wheel" "gamemode" "audio" "video" "libvirtd"];
     packages = with pkgs; [];
   };
 
@@ -94,11 +94,15 @@
     stow
     clang
     ripgrep
+    libvirt
+    qemu
+    virt-manager
   ];
 
   environment.shells = with pkgs; [zsh];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
+  virtualisation.libvirtd.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
