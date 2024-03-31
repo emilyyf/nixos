@@ -19,8 +19,8 @@
     (dmenu.overrideAttrs (oa: {
       src = fetchgit {
         url = https://github.com/emilyyf/dmenu;
-        rev = "85673fd42e8d6db07b0d611157974e61d78826d0";
-        hash = "sha256-3lRLa3NIg+7bUSDnef/rVL3XwvWWHTIPQ8mcVaq/SVI=";
+        rev = "dba37a1f4808f71112a550afaa3cad7081c0bca0";
+        hash = "sha256-Rx30pMQfk+6mD/f6dfxw7U9WHCHv1mAmOSBSYKo3G/0=";
       };
     }))
   ];
