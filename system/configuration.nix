@@ -94,7 +94,17 @@
     stow
     clang
     ripgrep
+    fzf
+    fd
+    dust
+    eza
+    zoxide
+    btop
+    bottom
     libvirt
+    bat
+    delta
+    tldr
     qemu
     virt-manager
   ];

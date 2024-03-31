@@ -27,7 +27,11 @@
       "cd.." = "cd ..";
       shr = "source ~/.zshrc";
       she = "vim ~/.zshrc";
-      ls = "ls --color=auto";
+      ls = "eza";
+      l = "eza -lah";
+      cd = "z";
+      cat = "bat";
+      top = "btop";
       ":3" = "echo";
       gch = "git checkout";
       gchn = "git checkout -b";
@@ -40,6 +44,7 @@
       gps = "git push";
       gpl = "git pull";
       gd = "git diff";
+      gl = "git log";
       yolo = "git commit -m \"$(curl -s whatthecommit.com/index.txt)\"";
       bye = "shutdown now";
       fkbye = "halt";
@@ -51,9 +56,11 @@
     };
 
     initExtra = ''
-      mkcd() {
-      	mkdir -p "$@" && cd "$_"
-      }
+         mkcd() {
+         	mkdir -p "$@" && cd "$_"
+         }
+
+      eval "$(zoxide init zsh)"
     '';
   };
 }
