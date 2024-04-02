@@ -12,9 +12,10 @@
     (st.overrideAttrs (oa: {
       src = fetchgit {
         url = https://github.com/emilyyf/st;
-        rev = "933453f2f0040e6a758ebc74d265b0d63e418f50";
-        hash = "sha256-vELFYuZtUXcdkyfB5ZpqJm66sevnJI9pzQMVQajczdM=";
+        rev = "aa3545d8d4b471d2725b0a9aa5f8a24ac21c0154";
+        hash = "sha256-JXYOsfwT7ykDVxlZQ0/0c3UHe+CmPQ82ClvcC9SugM8=";
       };
+      buildInputs = oa.buildInputs ++ [harfbuzz];
     }))
     (dmenu.overrideAttrs (oa: {
       src = fetchgit {
