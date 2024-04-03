@@ -9,6 +9,7 @@
     enableZshIntegration = true;
     settings = {
       copy_command = "xclip -selection clipboard";
+      pane_frames = false;
     };
   };
 }
