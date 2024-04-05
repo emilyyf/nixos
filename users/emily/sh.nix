@@ -7,7 +7,10 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
-    settings = {};
+    settings = {
+      command_timeout = 1000;
+      scan_timeout = 3;
+    };
   };
 
   programs.zsh = {
@@ -53,6 +56,8 @@
       dn = "date +\"%Y%m%d %H%M %Z\"";
       aoeu = "setxkbmap us";
       asdf = "setxkbmap us dvorak";
+      updh = "home-manager switch --flake .";
+      upds = "sudo nixos-rebuild switch --flake .";
     };
 
     initExtra = ''
