@@ -68,9 +68,13 @@
   users.users.emily = {
     isNormalUser = true;
     description = "Emily";
-    extraGroups = ["networkmanager" "wheel" "gamemode" "audio" "video" "libvirtd"];
+    extraGroups = ["networkmanager" "wheel" "gamemode" "audio" "video" "libvirtd" "plugdev"];
     packages = with pkgs; [];
   };
+
+  # Razer stuff
+  hardware.openrazer.enable = true;
+  hardware.openrazer.users = ["emily"];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -107,7 +111,21 @@
     tldr
     qemu
     virt-manager
+    polychromatic
   ];
+
+  services.interception-tools = {
+    enable = true;
+    plugins = with pkgs; [
+      interception-tools-plugins.caps2esc
+    ];
+    udevmonConfig = ''
+      - JOB: "${pkgs.interception-tools}/bin/intercept -g $DEVNODE | ${pkgs.interception-tools-plugins.caps2esc}/bin/caps2esc -m 1 | ${pkgs.interception-tools}/bin/uinput -d $DEVNODE"
+        DEVICE:
+          EVENTS:
+            EV_KEY: [KEY_CAPSLOCK, KEY_ESC]
+    '';
+  };
 
   environment.shells = with pkgs; [zsh];
   users.defaultUserShell = pkgs.zsh;
