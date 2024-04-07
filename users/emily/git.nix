@@ -4,10 +4,17 @@
   inputs,
   ...
 }: {
+  home.packages = with pkgs.gitAndTools; [git-crypt];
+
   programs.git = {
     enable = true;
     userName = "emilyyf";
     userEmail = "emily@anaboth.com";
+
+    signing = {
+      key = "0xB909D47D931FCC5B";
+      signByDefault = true;
+    };
 
     ignores = [
       "*.swp"
