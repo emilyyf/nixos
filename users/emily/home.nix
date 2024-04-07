@@ -2,12 +2,15 @@
   config,
   pkgs,
   inputs,
+  age,
   ...
 }: {
   imports = [
     ./sh.nix
     ./zellij.nix
     ./git.nix
+    ./spotify.nix
+    ./secrets.nix
   ];
 
   home.username = "emily";

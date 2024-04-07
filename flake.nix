@@ -43,7 +43,10 @@
       emily = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {inherit inputs;};
-        modules = [./users/emily/home.nix];
+        modules = [
+          ./users/emily/home.nix
+          agenix.homeManagerModules.default
+        ];
       };
     };
   };
