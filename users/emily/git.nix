@@ -7,7 +7,7 @@
   programs.git = {
     enable = true;
     userName = "emilyyf";
-    userEmail = "68402015+emilyyf@users.noreply.github.com";
+    userEmail = "emily@anaboth.com";
 
     ignores = [
       "*.swp"

@@ -28,6 +28,8 @@
 
   services.gnome.gnome-keyring.enable = true;
 
+  services.dbus.packages = [pkgs.gcr];
+
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
