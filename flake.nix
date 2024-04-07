@@ -10,12 +10,16 @@
 
     nix-citizen.url = "github:LovingMelody/nix-citizen";
     nix-citizen.inputs.nix-gaming.follows = "nix-gaming";
+
+    agenix.url = "github:ryantm/agenix";
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    agenix,
     ...
   } @ inputs: let
     lib = nixpkgs.lib;
@@ -29,7 +33,10 @@
       achird = lib.nixosSystem {
         inherit system;
         specialArgs = {inherit inputs;};
-        modules = [./system/configuration.nix];
+        modules = [
+          ./system/configuration.nix
+          agenix.nixosModules.default
+        ];
       };
     };
     homeConfigurations = {

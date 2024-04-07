@@ -4,6 +4,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
@@ -112,6 +113,7 @@
     qemu
     virt-manager
     polychromatic
+    inputs.agenix.packages."${system}".default
   ];
 
   services.interception-tools = {
