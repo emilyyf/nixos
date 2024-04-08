@@ -11,6 +11,7 @@
     ./git.nix
     ./spotify.nix
     ./secrets.nix
+    ./nvim.nix
   ];
 
   home.username = "emily";

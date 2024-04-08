@@ -13,6 +13,9 @@
 
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -20,6 +23,7 @@
     nixpkgs,
     home-manager,
     agenix,
+    nixvim,
     ...
   } @ inputs: let
     lib = nixpkgs.lib;
@@ -46,6 +50,7 @@
         modules = [
           ./users/emily/home.nix
           agenix.homeManagerModules.default
+          inputs.nixvim.homeManagerModules.nixvim
         ];
       };
     };
