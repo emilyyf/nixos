@@ -11,7 +11,7 @@
     ./git.nix
     ./spotify.nix
     ./secrets.nix
-    ./nvim.nix
+    ./nvim
   ];
 
   home.username = "emily";
@@ -83,6 +83,7 @@
   };
 
   home.sessionVariables = {
+    EDITOR = "nvim";
   };
 
   xsession.profileExtra = ''

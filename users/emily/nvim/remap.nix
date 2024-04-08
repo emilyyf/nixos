@@ -5,32 +5,7 @@
   ...
 }: {
   programs.nixvim = {
-    enable = true;
-    defaultEditor = true;
-
     globals.mapleader = " ";
-    clipboard.providers.xclip.enable = true;
-
-    opts = {
-      number = true;
-      relativenumber = true;
-
-      tabstop = 2;
-      softtabstop = 2;
-      shiftwidth = 2;
-      smartindent = true;
-
-      hlsearch = false;
-      incsearch = true;
-
-      termguicolors = true;
-
-      scrolloff = 8;
-
-      updatetime = 50;
-      colorcolumn = "80";
-    };
-
     keymaps = [
       {
         key = "<leader>pv";
@@ -79,12 +54,6 @@
       }
       {
         mode = ["n"];
-        key = "<leader>f";
-        action = "vim.lsp.buf.format";
-        lua = true;
-      }
-      {
-        mode = ["n"];
         key = "<tab>";
         action = "vim.cmd.bnext";
         lua = true;
@@ -123,6 +92,21 @@
         mode = ["x"];
         key = "<leader>p";
         action = "[[\"_dP]]";
+        lua = true;
+      }
+      {
+        mode = ["v" "n"];
+        key = "<Leader>m";
+        action = "<cmd>MCstart<cr>";
+      }
+      {
+        key = "<leader>rn";
+        action = "<cmd>IncRename<cr>";
+      }
+      {
+        mode = ["n"];
+        key = "<leader>f";
+        action = "vim.lsp.buf.format";
         lua = true;
       }
     ];
