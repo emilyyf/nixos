@@ -49,8 +49,8 @@
     package = pkgs.dwm.overrideAttrs {
       src = pkgs.fetchgit {
         url = https://github.com/emilyyf/dwm;
-        rev = "bea597f925a311c38f751bb4a3a13471107fca5e";
-        hash = "sha256-wH1y2fCilzzaZl/PPJMN5ddIpxaPTvnteXMCa60Xug8=";
+        rev = "a5dc708a40e8e6d09548ea12b8bc4042715992cf";
+        hash = "sha256-bBzdC6yGgrbnD25pu9vfOBFvmzaT6XtknI1FuNHB1FE=";
       };
     };
   };
