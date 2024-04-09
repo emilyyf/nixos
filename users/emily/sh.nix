@@ -7,10 +7,21 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
-    settings = {
-      command_timeout = 1000;
-      scan_timeout = 3;
-    };
+    settings =
+      {
+        command_timeout = 1000;
+        scan_timeout = 3;
+        palette = "catppuccin_macchiato";
+      }
+      // builtins.fromTOML (builtins.readFile
+        (pkgs.fetchFromGitHub
+          {
+            owner = "catppuccin";
+            repo = "starship";
+            rev = "5629d2356f62a9f2f8efad3ff37476c19969bd4f";
+            sha256 = "sha256-nsRuxQFKbQkyEI4TXgvAjcroVdG+heKX5Pauq/4Ota0=";
+          }
+          + /palettes/macchiato.toml));
   };
 
   programs = {

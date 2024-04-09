@@ -117,6 +117,7 @@
     qemu
     virt-manager
     polychromatic
+    nix-prefetch-git
     inputs.agenix.packages."${system}".default
   ];
 
@@ -137,6 +138,7 @@
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
   virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

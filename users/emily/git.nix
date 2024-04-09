@@ -37,8 +37,25 @@
       repack.usedeltabaseoffset = "true";
       pull.ff = "only";
     };
+
     lfs.enable = true;
-    delta.enable = true;
+
+    includes = [
+      {
+        path = pkgs.fetchurl {
+          url = "https://raw.githubusercontent.com/catppuccin/delta/765eb17d0268bf07c20ca439771153f8bc79444f/catppuccin.gitconfig";
+          sha256 = "1spw0nyb52kh2y4gybivjqgvaraaka4r1ww6v8msnzq69w7zi10i";
+        };
+      }
+    ];
+
+    delta = {
+      enable = true;
+      options = {
+        features = "catppuccin-macchiato";
+      };
+    };
+
     aliases = {
       essa = "push --force";
       co = "checkout";
