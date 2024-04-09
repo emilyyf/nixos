@@ -31,6 +31,24 @@
     };
   };
 
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "Catppuccin Macchiato";
+    };
+    themes = {
+      "Catppuccin Macchiato" = {
+        src = pkgs.fetchFromGitHub {
+          owner = "catppuccin";
+          repo = "bat";
+          rev = "b8134f01b0ac176f1cf2a7043a5abf5a1a29457b";
+          hash = "sha256-gzf0/Ltw8mGMsEFBTUuN33MSFtUP4xhdxfoZFntaycQ=";
+        };
+        file = "themes/Catppuccin Macchiato.tmTheme";
+      };
+    };
+  };
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
