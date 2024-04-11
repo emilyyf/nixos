@@ -140,19 +140,29 @@
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 10d";
+    };
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  nix.settings = {
-    substituters = ["https://nix-gaming.cachix.org"];
-    trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
+    extraOptions = ''
+      experimental-features = nix-command flakes recursive-nix
+      keep-outputs = true
+      warn-dirty = false
+      keep-derivations = true
+      min-free = ${toString (100 * 1024 * 1024)}
+      max-free = ${toString (1024 * 1024 * 1024)}
+    '';
+    settings = {
+      substituters = ["https://nix-gaming.cachix.org"];
+      trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
+      auto-optimise-store = true;
+      builders-use-substitutes = true;
+      max-jobs = "auto";
+      extra-experimental-features = ["flakes" "nix-command" "recursive-nix" "ca-derivations"];
+    };
   };
 
   fileSystems."/run/media/emily/Games" = {
@@ -160,4 +170,6 @@
     fsType = "ext4";
     options = ["nofail"];
   };
+
+  system.stateVersion = "23.11"; # DO NOT CHANGE
 }
