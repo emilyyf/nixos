@@ -117,6 +117,10 @@
     qemu
     virt-manager
     polychromatic
+    onefetch
+    fastfetch
+    cpufetch
+    gping
     nix-prefetch-git
     inputs.agenix.packages."${system}".default
   ];
