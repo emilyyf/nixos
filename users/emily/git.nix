@@ -24,6 +24,8 @@
       "result-*"
       "*.orig"
       "*.rej"
+      ".env"
+      ".envrc"
     ];
 
     extraConfig = {
