@@ -25,6 +25,6 @@ buildGoModule rec {
   meta = with lib; {
     description = "Simple app to set X root window name";
     homepage = "https://github.com/emilyyf/goroot/";
-    license = licenses.mit;
+    license = licenses.bsd3;
   };
 }
