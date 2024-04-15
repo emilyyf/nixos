@@ -1,9 +1,11 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   environment.systemPackages = with pkgs; [
+    (callPackage ./goroot.nix {})
     feh
     gnome.gnome-keyring
     gcr
@@ -49,8 +51,8 @@
     package = pkgs.dwm.overrideAttrs {
       src = pkgs.fetchgit {
         url = https://github.com/emilyyf/dwm;
-        rev = "a5dc708a40e8e6d09548ea12b8bc4042715992cf";
-        hash = "sha256-bBzdC6yGgrbnD25pu9vfOBFvmzaT6XtknI1FuNHB1FE=";
+        rev = "622f07a8f8b09ead313989f2e8788d1122f828cf";
+        hash = "sha256-/0Ouva/omdj3Icsdu1SnvrW0E/jD92PEVbfjmGVd0Ck=";
       };
     };
   };
