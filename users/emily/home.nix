@@ -34,6 +34,7 @@
     inputs.nix-citizen.packages.${system}.lug-helper
     firefox
     thunderbird
+    mupdf
     discord
     telegram-desktop
     tutanota-desktop
