@@ -38,7 +38,7 @@
         inherit system;
         specialArgs = {inherit inputs;};
         modules = [
-          ./system/configuration.nix
+          ./hosts/achird
           agenix.nixosModules.default
         ];
       };
