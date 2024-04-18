@@ -31,8 +31,8 @@
     ...
   } @ inputs: let
     systemSettings = {
-      system = "x86_64-darwin";
-      hostname = "Vela";
+      system = "x86_64-linux";
+      hostname = "achird";
       timezone = "America/Sao_Paulo";
       locale = "en_US.UTF-8";
     };
@@ -76,6 +76,7 @@
         };
         modules = [
           ./users/emily/home.nix
+          agenix.homeManagerModules.default
           inputs.nixvim.homeManagerModules.nixvim
         ];
       };
