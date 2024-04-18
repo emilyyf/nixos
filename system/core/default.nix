@@ -33,10 +33,4 @@
     extraGroups = ["networkmanager" "wheel" "gamemode" "audio" "video" "libvirtd" "plugdev"];
     packages = with pkgs; [];
   };
-
-  fileSystems."/run/media/emily/Games" = {
-    device = "/dev/disk/by-label/Games";
-    fsType = "ext4";
-    options = ["nofail"];
-  };
 }

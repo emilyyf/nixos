@@ -27,6 +27,12 @@
     fsType = "vfat";
   };
 
+  fileSystems."/run/media/emily/Games" = {
+    device = "/dev/disk/by-label/Games";
+    fsType = "ext4";
+    options = ["nofail"];
+  };
+
   swapDevices = [
     {device = "/dev/disk/by-uuid/16ddc138-714d-4113-85f5-651165ebd210";}
   ];
