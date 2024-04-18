@@ -2,6 +2,8 @@
   config,
   pkgs,
   inputs,
+  userSettings,
+  systemSettings,
   ...
 }: {
   programs.zellij = {
@@ -9,8 +11,10 @@
     enableZshIntegration = true;
     settings = {
       theme = "catppuccin-macchiato";
-      copy_command = "xclip -selection clipboard";
-      # copy_command "pbcopy"  #os x
+      copy_command =
+        if systemSettings.system == "x86_64-darwin"
+        then "pbcopy"
+        else "xclip -selection clipboard";
       pane_frames = false;
     };
   };

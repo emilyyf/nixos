@@ -2,6 +2,8 @@
   config,
   pkgs,
   inputs,
+  userSettings,
+  systemSettings,
   ...
 }: {
   imports = [
@@ -13,7 +15,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "achird";
+  networking.hostName = systemSettings.hostname;
 
   networking.networkmanager.enable = true;
 
@@ -25,9 +27,9 @@
   services.flatpak.enable = true;
   programs.dconf.enable = true;
 
-  users.users.emily = {
+  users.users.${userSettings.username} = {
     isNormalUser = true;
-    description = "Emily";
+    description = userSettings.name;
     extraGroups = ["networkmanager" "wheel" "gamemode" "audio" "video" "libvirtd" "plugdev"];
     packages = with pkgs; [];
   };

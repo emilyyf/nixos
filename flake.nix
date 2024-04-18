@@ -26,8 +26,23 @@
     nixvim,
     ...
   } @ inputs: let
+    systemSettings = {
+      system = "x86_64-linux";
+      hostname = "achird";
+      timezone = "America/Sao_Paulo";
+      locale = "en_US.UTF-8";
+    };
+
+    userSettings = {
+      username = "emily";
+      githubUser = "emilyyf";
+      name = "Emily";
+      email = "emily@anaboth.com";
+      editor = "nvim";
+    };
+
     lib = nixpkgs.lib;
-    system = "x86_64-linux";
+    system = systemSettings.system;
     pkgs = import nixpkgs {
       inherit system;
       config = {allowUnfree = true;};
@@ -36,7 +51,11 @@
     nixosConfigurations = {
       achird = lib.nixosSystem {
         inherit system;
-        specialArgs = {inherit inputs;};
+        specialArgs = {
+          inherit inputs;
+          inherit systemSettings;
+          inherit userSettings;
+        };
         modules = [
           ./hosts/achird
           agenix.nixosModules.default
@@ -46,7 +65,11 @@
     homeConfigurations = {
       emily = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = {inherit inputs;};
+        extraSpecialArgs = {
+          inherit inputs;
+          inherit systemSettings;
+          inherit userSettings;
+        };
         modules = [
           ./users/emily/home.nix
           agenix.homeManagerModules.default

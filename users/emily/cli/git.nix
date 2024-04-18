@@ -2,14 +2,16 @@
   config,
   pkgs,
   inputs,
+  userSettings,
+  systemSettings,
   ...
 }: {
   home.packages = with pkgs.gitAndTools; [git-crypt];
 
   programs.git = {
     enable = true;
-    userName = "emilyyf";
-    userEmail = "emily@anaboth.com";
+    userName = userSettings.githubUser;
+    userEmail = userSettings.email;
 
     signing = {
       key = "0xB909D47D931FCC5B";

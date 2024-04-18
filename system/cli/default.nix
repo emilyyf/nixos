@@ -2,10 +2,12 @@
   config,
   pkgs,
   inputs,
+  userSettings,
+  systemSettings,
   ...
 }: {
   environment.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = userSettings.editor;
   };
 
   environment.systemPackages = with pkgs; [

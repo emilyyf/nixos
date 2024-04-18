@@ -2,10 +2,12 @@
   config,
   pkgs,
   inputs,
+  userSettings,
+  systemSettings,
   ...
 }: {
   programs.nixvim = {
-    clipboard.providers.xclip.enable = true;
+    clipboard.providers.xclip.enable = systemSettings.system == "x86_64-linux";
 
     opts = {
       number = true;
