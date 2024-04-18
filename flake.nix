@@ -16,6 +16,9 @@
 
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -24,11 +27,12 @@
     home-manager,
     agenix,
     nixvim,
+    nix-darwin,
     ...
   } @ inputs: let
     systemSettings = {
-      system = "x86_64-linux";
-      hostname = "achird";
+      system = "x86_64-darwin";
+      hostname = "Vela";
       timezone = "America/Sao_Paulo";
       locale = "en_US.UTF-8";
     };
@@ -72,8 +76,20 @@
         };
         modules = [
           ./users/emily/home.nix
-          agenix.homeManagerModules.default
           inputs.nixvim.homeManagerModules.nixvim
+        ];
+      };
+    };
+    darwinConfigurations = {
+      Vela = nix-darwin.lib.darwinSystem {
+        specialArgs = {
+          inherit inputs;
+          inherit self;
+          inherit systemSettings;
+          inherit userSettings;
+        };
+        modules = [
+          ./hosts/vela
         ];
       };
     };

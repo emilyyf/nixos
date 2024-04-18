@@ -6,9 +6,12 @@
   systemSettings,
   ...
 }: {
-  environment.sessionVariables = {
-    EDITOR = userSettings.editor;
-  };
+  imports =
+    if systemSettings.system == "x86_64-linux"
+    then [
+      ./linux.nix
+    ]
+    else [];
 
   environment.systemPackages = with pkgs; [
     vim
@@ -40,6 +43,5 @@
   ];
 
   environment.shells = with pkgs; [zsh];
-  users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 }

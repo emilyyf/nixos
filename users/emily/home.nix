@@ -33,20 +33,13 @@
   home.homeDirectory =
     (
       if systemSettings.system == "x86_64-darwin"
-      then "/User/"
+      then "/Users/"
       else "/home/"
     )
     + userSettings.username;
 
   home.packages = with pkgs; [
-    firefox
-    thunderbird
-    mupdf
-    discord
-    telegram-desktop
-    tutanota-desktop
     nerdfonts
-    prismlauncher
     alejandra
     unzip
   ];
@@ -58,4 +51,5 @@
   };
 
   programs.home-manager.enable = true;
+  home.stateVersion = "23.11"; # DO NOT CHANGE
 }

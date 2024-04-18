@@ -7,7 +7,6 @@
 }: {
   targets.genericLinux.enable = true;
   xdg.enable = true;
-  home.stateVersion = "23.11"; # DO NOT CHANGE
 
   services.gpg-agent = {
     enable = true;

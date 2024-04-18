@@ -16,6 +16,7 @@
     protontricks
     mangohud
     gamescope
+    prismlauncher
 
     # Audio
     lsp-plugins
@@ -26,6 +27,12 @@
     wineasio
 
     # Misc
+    firefox
+    thunderbird
+    mupdf
+    discord
+    telegram-desktop
+    tutanota-desktop
     spectacle
     xsel
     xclip

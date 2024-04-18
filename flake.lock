@@ -285,6 +285,26 @@
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1711763326,
+        "narHash": "sha256-sXcesZWKXFlEQ8oyGHnfk4xc9f2Ip0X/+YZOq3sKviI=",
+        "owner": "LnL7",
+        "repo": "nix-darwin",
+        "rev": "36524adc31566655f2f4d55ad6b875fb5c1a4083",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LnL7",
+        "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
+    "nix-darwin_2": {
+      "inputs": {
+        "nixpkgs": [
           "nixvim",
           "nixpkgs"
         ]
@@ -430,7 +450,7 @@
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts_2",
         "home-manager": "home-manager_3",
-        "nix-darwin": "nix-darwin",
+        "nix-darwin": "nix-darwin_2",
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -483,6 +503,7 @@
         "agenix": "agenix",
         "home-manager": "home-manager_2",
         "nix-citizen": "nix-citizen",
+        "nix-darwin": "nix-darwin",
         "nix-gaming": "nix-gaming",
         "nixpkgs": "nixpkgs_3",
         "nixvim": "nixvim"
