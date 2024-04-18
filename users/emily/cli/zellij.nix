@@ -10,6 +10,7 @@
     settings = {
       theme = "catppuccin-macchiato";
       copy_command = "xclip -selection clipboard";
+      # copy_command "pbcopy"  #os x
       pane_frames = false;
     };
   };
