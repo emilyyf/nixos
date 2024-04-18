@@ -41,7 +41,7 @@
     };
   };
 
-  services.xserver.displayManager.sddm = {
+  services.displayManager.sddm = {
     enable = true;
     theme = "${import ./catppuccin-sddm.nix {inherit pkgs;}}";
   };
