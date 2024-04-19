@@ -21,8 +21,9 @@
         ./style/qt.nix
         ./style/gtk.nix
         ./style/dunst.nix
-        # These two should be universal but I still have to figure out how to
+        # These three should be universal but I still have to figure out how to
         # set up on darwin and wsl
+        ./misc/firefox.nix
         ./secrets.nix
         ./cli/spotify.nix
       ]
