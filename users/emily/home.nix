@@ -12,6 +12,9 @@
       ./cli/sh.nix
       ./cli/git.nix
       ./cli/zellij.nix
+      ./cli/ssh.nix
+      ./app/firefox.nix
+      ./app/kitty.nix
       ./nvim
     ]
     ++ (
@@ -23,8 +26,6 @@
         ./style/dunst.nix
         # These three should be universal but I still have to figure out how to
         # set up on darwin and wsl
-        ./app/firefox.nix
-				./app/kitty.nix
         ./secrets.nix
         ./cli/spotify.nix
       ]

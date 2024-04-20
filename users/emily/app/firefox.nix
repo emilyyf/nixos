@@ -3,10 +3,15 @@
   pkgs,
   inputs,
   age,
+  systemSettings,
   ...
 }: {
   programs.firefox = {
     enable = true;
+    package =
+      if systemSettings.system == "x86_64-darwin"
+      then null
+      else pkgs.firefox;
     profiles = {
       main = {
         name = "main";

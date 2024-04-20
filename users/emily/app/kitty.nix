@@ -9,9 +9,9 @@
     enable = true;
     theme = "Catppuccin-Macchiato";
     shellIntegration.enableZshIntegration = true;
-		font = {
-			name = "JetBrainsMono Nerd Font";
-			size = 9;
-		};
+    font = {
+      name = "JetBrainsMono Nerd Font";
+      size = 9;
+    };
   };
 }

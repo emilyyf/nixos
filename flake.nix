@@ -31,8 +31,8 @@
     ...
   } @ inputs: let
     systemSettings = {
-      system = "x86_64-linux";
-      hostname = "achird";
+      system = "x86_64-darwin";
+      hostname = "Vela";
       timezone = "America/Sao_Paulo";
       locale = "en_US.UTF-8";
     };
