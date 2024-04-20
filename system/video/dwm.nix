@@ -11,6 +11,7 @@
     gcr
     dunst
     picom
+    kitty
     (st.overrideAttrs (oa: {
       src = fetchgit {
         url = https://github.com/emilyyf/st;
@@ -51,8 +52,8 @@
     package = pkgs.dwm.overrideAttrs {
       src = pkgs.fetchgit {
         url = https://github.com/emilyyf/dwm;
-        rev = "622f07a8f8b09ead313989f2e8788d1122f828cf";
-        hash = "sha256-/0Ouva/omdj3Icsdu1SnvrW0E/jD92PEVbfjmGVd0Ck=";
+        rev = "1805f3b24423b11c1c5503ad8523749c31823fd1";
+        hash = "sha256-fjXB90uEmwllnA+U39/Q3jcXf4LekfhTOGXHfz4PQcQ=";
       };
     };
   };

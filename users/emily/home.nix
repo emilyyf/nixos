@@ -23,7 +23,8 @@
         ./style/dunst.nix
         # These three should be universal but I still have to figure out how to
         # set up on darwin and wsl
-        ./misc/firefox.nix
+        ./app/firefox.nix
+				./app/kitty.nix
         ./secrets.nix
         ./cli/spotify.nix
       ]
