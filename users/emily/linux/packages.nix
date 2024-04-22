@@ -17,6 +17,8 @@
     mangohud
     gamescope
     prismlauncher
+    lutris
+    gnome3.adwaita-icon-theme
 
     # Audio
     lsp-plugins
