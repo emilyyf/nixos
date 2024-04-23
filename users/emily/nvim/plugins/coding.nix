@@ -37,7 +37,10 @@
       servers = {
         clangd.enable = true;
         nixd.enable = true;
-        elixirls.enable = true;
+        lexical = {
+          enable = true;
+          cmd = ["${pkgs.lexical}/libexec/start_lexical.sh"];
+        };
         gopls.enable = true;
         rust-analyzer = {
           enable = true;
