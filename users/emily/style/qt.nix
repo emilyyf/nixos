@@ -7,7 +7,7 @@
 }: {
   qt = {
     enable = true;
-    platformTheme = "gtk";
+    platformTheme.name = "gtk";
     style = {
       name = "Catppuccin-Macchiato";
       package = pkgs.catppuccin-kde.override {

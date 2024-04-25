@@ -10,7 +10,9 @@
 
     treesitter-context = {
       enable = true;
-      maxLines = 3;
+      settings = {
+        max_lines = 3;
+      };
     };
 
     treesitter = {
