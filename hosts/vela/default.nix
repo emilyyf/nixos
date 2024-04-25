@@ -29,6 +29,7 @@
       "firefox"
       "kitty"
       "1password"
+      "insomnia"
     ];
   };
 }

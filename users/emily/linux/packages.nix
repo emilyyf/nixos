@@ -32,6 +32,7 @@
     firefox
     thunderbird
     mupdf
+    zathura
     discord
     telegram-desktop
     tutanota-desktop
@@ -39,5 +40,6 @@
     scrot
     xsel
     xclip
+    insomnia
   ];
 }
