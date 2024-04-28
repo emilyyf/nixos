@@ -51,6 +51,7 @@
 
   home.sessionVariables = {
     EDITOR = userSettings.editor;
+    FLAKE = config.home.homeDirectory + "/.dotfiles/nixos";
   };
 
   programs.home-manager.enable = true;

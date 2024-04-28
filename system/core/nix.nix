@@ -6,13 +6,13 @@
 }: {
   nixpkgs.config.allowUnfree = true;
 
-  nix = {
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 10d";
-    };
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 3";
+  };
 
+  nix = {
     extraOptions = ''
       experimental-features = nix-command flakes recursive-nix
       keep-outputs = true
