@@ -12,6 +12,10 @@
         command_timeout = 1000;
         scan_timeout = 3;
         palette = "catppuccin_macchiato";
+        format = "$character";
+        right_format = "$all";
+        time.disabled = false;
+        status.disabled = false;
       }
       // builtins.fromTOML (builtins.readFile
         (pkgs.fetchFromGitHub
