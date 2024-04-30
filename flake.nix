@@ -19,6 +19,8 @@
 
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
   };
 
   outputs = {
@@ -63,6 +65,17 @@
         modules = [
           ./hosts/achird
           agenix.nixosModules.default
+        ];
+      };
+      code1 = lib.nixosSystem {
+        inherit system;
+        specialArgs = {
+          inherit inputs;
+          inherit systemSettings;
+          inherit userSettings;
+        };
+        modules = [
+          ./hosts/code1
         ];
       };
     };
