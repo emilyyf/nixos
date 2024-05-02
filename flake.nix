@@ -28,8 +28,8 @@
     nixpkgs,
     home-manager,
     agenix,
-    nixvim,
     nix-darwin,
+    nixos-wsl,
     ...
   } @ inputs: let
     systemSettings = {
@@ -75,6 +75,7 @@
           inherit userSettings;
         };
         modules = [
+          nixos-wsl.nixosModules.default
           ./hosts/code1
         ];
       };
