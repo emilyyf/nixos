@@ -10,7 +10,7 @@
 
   programs.git = {
     enable = true;
-    userName = userSettings.githubUser;
+    userName = userSettings.name;
     userEmail = userSettings.email;
 
     signing = {
