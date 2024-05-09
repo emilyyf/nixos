@@ -1,8 +1,6 @@
 {
-  config,
   pkgs,
   inputs,
-  userSettings,
   systemSettings,
   ...
 }: {
@@ -41,6 +39,12 @@
     nix-prefetch-git
     inputs.agenix.packages."${system}".default
   ];
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 3";
+  };
 
   environment.shells = with pkgs; [zsh];
   programs.zsh.enable = true;
