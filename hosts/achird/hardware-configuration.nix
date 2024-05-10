@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }: {
@@ -30,7 +29,7 @@
   fileSystems."/run/media/emily/Games" = {
     device = "/dev/disk/by-label/Games";
     fsType = "ext4";
-    options = ["nofail"];
+    options = ["rw"];
   };
 
   swapDevices = [
