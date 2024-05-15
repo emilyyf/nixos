@@ -37,6 +37,7 @@
       hostname = "achird";
       timezone = "America/Sao_Paulo";
       locale = "en_US.UTF-8";
+      isWsl = false;
     };
 
     userSettings = {

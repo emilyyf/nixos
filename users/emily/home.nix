@@ -1,8 +1,6 @@
 {
   config,
   pkgs,
-  inputs,
-  age,
   userSettings,
   systemSettings,
   ...
@@ -13,12 +11,10 @@
       ./cli/git.nix
       ./cli/zellij.nix
       ./cli/ssh.nix
-      ./app/firefox.nix
-      ./app/kitty.nix
       ./nvim
     ]
     ++ (
-      if systemSettings.system == "x86_64-linux"
+      if systemSettings.system == "x86_64-linux" && !systemSettings.isWsl
       then [
         ./linux
         ./style/qt.nix
@@ -28,6 +24,14 @@
         # set up on darwin and wsl
         ./secrets.nix
         ./cli/spotify.nix
+      ]
+      else []
+    )
+    ++ (
+      if !systemSettings.isWsl
+      then [
+        ./app/firefox.nix
+        ./app/kitty.nix
       ]
       else []
     );

@@ -1,9 +1,6 @@
 {
-  config,
   pkgs,
-  inputs,
   userSettings,
-  systemSettings,
   ...
 }: {
   environment.sessionVariables = {
