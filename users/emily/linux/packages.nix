@@ -19,6 +19,7 @@
     prismlauncher
     lutris
     gnome3.adwaita-icon-theme
+    r2modman
 
     # Audio
     lsp-plugins
