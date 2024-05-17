@@ -17,7 +17,10 @@
         key = "0xB909D47D931FCC5B";
         signByDefault = true;
       }
-      else {}
+      else {
+        key = "";
+        signByDefault = false;
+      }
     );
 
     ignores = [
