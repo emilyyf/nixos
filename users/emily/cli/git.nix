@@ -1,7 +1,5 @@
 {
-  config,
   pkgs,
-  inputs,
   userSettings,
   systemSettings,
   ...
@@ -13,10 +11,14 @@
     userName = userSettings.name;
     userEmail = userSettings.email;
 
-    signing = {
-      key = "0xB909D47D931FCC5B";
-      signByDefault = true;
-    };
+    signing = (
+      if !systemSettings.isWsl
+      then {
+        key = "0xB909D47D931FCC5B";
+        signByDefault = true;
+      }
+      else {}
+    );
 
     ignores = [
       "*.swp"
