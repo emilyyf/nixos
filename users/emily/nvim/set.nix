@@ -1,11 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  userSettings,
-  systemSettings,
-  ...
-}: {
+{systemSettings, ...}: {
   programs.nixvim = {
     clipboard.providers.xclip.enable = systemSettings.system == "x86_64-linux";
 
@@ -27,6 +20,8 @@
       termguicolors = true;
       swapfile = false;
       scrolloff = 8;
+
+      inccommand = "split";
 
       updatetime = 50;
       colorcolumn = "80";

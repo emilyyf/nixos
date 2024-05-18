@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}: {
+{...}: {
   programs.nixvim = {
     globals.mapleader = " ";
     keymaps = [
@@ -108,6 +103,11 @@
         key = "<leader>f";
         action = "vim.lsp.buf.format";
         lua = true;
+      }
+      {
+        mode = ["n"];
+        key = "-";
+        action = "<CMD>Oil<CR>";
       }
     ];
   };

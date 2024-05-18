@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.nixvim.plugins = {
     inc-rename.enable = true;
     efmls-configs.enable = true;
@@ -78,6 +73,7 @@
         menu = {
           nvim_lsp = "[LSP]";
           nvim_lua = "[api]";
+          cmp-dbee = "[Dbee]";
           path = "[path]";
           luasnip = "[snip]";
           buffer = "[buffer]";
@@ -108,6 +104,7 @@
           {name = "nvim_lsp";}
           {name = "luasnip";}
           {name = "cmp_tabby";}
+          {name = "cmp-dbee";}
           {
             name = "buffer";
             # Words from other open buffers can also be suggested.

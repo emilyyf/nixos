@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}: {
+{...}: {
   programs.nixvim.colorschemes.catppuccin = {
     enable = true;
     settings = {
