@@ -1,7 +1,4 @@
 {
-  config,
-  pkgs,
-  inputs,
   userSettings,
   systemSettings,
   ...
@@ -31,6 +28,5 @@
     isNormalUser = true;
     description = userSettings.name;
     extraGroups = ["networkmanager" "wheel" "gamemode" "audio" "video" "libvirtd" "plugdev"];
-    packages = with pkgs; [];
   };
 }

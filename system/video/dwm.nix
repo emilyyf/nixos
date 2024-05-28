@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     (callPackage ./goroot.nix {})
     feh
@@ -30,6 +25,12 @@
   ];
 
   services.gnome.gnome-keyring.enable = true;
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  services.devmon.enable = true;
+  services.tumbler.enable = true;
+  programs.thunar.enable = true;
+  programs.xfconf.enable = true;
 
   services.dbus.packages = [pkgs.gcr];
 

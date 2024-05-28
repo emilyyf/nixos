@@ -1,8 +1,5 @@
 {
-  config,
   pkgs,
-  inputs,
-  userSettings,
   systemSettings,
   ...
 }: {
@@ -21,13 +18,6 @@
     LC_TELEPHONE = systemSettings.locale;
     LC_TIME = systemSettings.locale;
   };
-
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "dvorak";
-  };
-
-  console.keyMap = "dvorak";
 
   services.interception-tools = {
     enable = true;
