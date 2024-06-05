@@ -41,11 +41,9 @@ in {
       barbar = {
         enable = true;
         keymaps = {
-          silent = true;
-
-          next = "<TAB>";
-          previous = "<S-TAB>";
-          close = "<leader>x";
+          next.key = "<TAB>";
+          previous.key = "<S-TAB>";
+          close.key = "<leader>x";
         };
       };
 
