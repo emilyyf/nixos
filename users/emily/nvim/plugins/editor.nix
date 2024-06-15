@@ -15,6 +15,8 @@ in {
       multicursors.enable = true;
       rainbow-delimiters.enable = true;
       inc-rename.enable = true;
+      surround.enable = true;
+      commentary.enable = true;
 
       noice = {
         enable = true;
