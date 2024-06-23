@@ -1,15 +1,10 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{config, ...}: {
   services.xserver.enable = true;
 
   programs.xwayland.enable = true;
 
   hardware.opengl = {
     enable = true;
-    driSupport = true;
     driSupport32Bit = true;
   };
 
