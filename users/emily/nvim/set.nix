@@ -25,6 +25,7 @@
 
       updatetime = 50;
       colorcolumn = "80";
+      lcs = "tab:<->,space:.,eol:$";
     };
   };
 }

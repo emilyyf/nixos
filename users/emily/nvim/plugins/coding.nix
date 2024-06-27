@@ -2,6 +2,8 @@
   programs.nixvim.plugins = {
     inc-rename.enable = true;
     efmls-configs.enable = true;
+    lsp-format.enable = true;
+    luasnip.enable = true;
 
     treesitter-context = {
       enable = true;
@@ -58,13 +60,6 @@
       };
     };
 
-    lsp-format = {
-      enable = true;
-      lspServersToEnable = ["efm"];
-    };
-
-    luasnip.enable = true;
-
     lspkind = {
       enable = true;
 
@@ -73,12 +68,10 @@
         menu = {
           nvim_lsp = "[LSP]";
           nvim_lua = "[api]";
-          cmp-dbee = "[Dbee]";
           path = "[path]";
           luasnip = "[snip]";
           buffer = "[buffer]";
           neorg = "[neorg]";
-          cmp_tabby = "[Tabby]";
         };
       };
     };
@@ -103,8 +96,6 @@
           {name = "path";}
           {name = "nvim_lsp";}
           {name = "luasnip";}
-          {name = "cmp_tabby";}
-          {name = "cmp-dbee";}
           {
             name = "buffer";
             # Words from other open buffers can also be suggested.
@@ -113,10 +104,6 @@
           {name = "neorg";}
         ];
       };
-    };
-
-    cmp-tabby = {
-      enable = true;
     };
   };
 }
