@@ -1,15 +1,14 @@
 {
-  config,
   pkgs,
   inputs,
-  age,
   ...
 }: {
-  home.packages = with pkgs; [
+  home.packages = with pkgs;
+  with inputs; [
     # Games
-    inputs.nix-citizen.packages.${system}.star-citizen
-    inputs.nix-citizen.packages.${system}.star-citizen-helper
-    inputs.nix-citizen.packages.${system}.lug-helper
+    nix-citizen.packages.${system}.star-citizen
+    nix-citizen.packages.${system}.star-citizen-helper
+    nix-citizen.packages.${system}.lug-helper
     xivlauncher
     wineWowPackages.stable
     winetricks
@@ -20,6 +19,7 @@
     lutris
     gnome3.adwaita-icon-theme
     r2modman
+    osu-lazer-bin
 
     # Audio
     lsp-plugins
