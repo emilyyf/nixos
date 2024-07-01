@@ -44,9 +44,9 @@
     ++ (with pkgs-small; [
       xivlauncher
     ]);
-    # ++ (with inputs; [
-    #   nix-citizen.packages.${system}.star-citizen
-    #   nix-citizen.packages.${system}.star-citizen-helper
-    #   nix-citizen.packages.${system}.lug-helper
-    # ]);
+  # ++ (with inputs; [
+  #   nix-citizen.packages.${system}.star-citizen
+  #   nix-citizen.packages.${system}.star-citizen-helper
+  #   nix-citizen.packages.${system}.lug-helper
+  # ]);
 }

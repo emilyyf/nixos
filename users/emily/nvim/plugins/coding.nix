@@ -36,16 +36,25 @@
       servers = {
         clangd.enable = true;
         nixd.enable = true;
+        eslint.enable = true;
+        jsonls.enable = true;
+        pylsp.enable = true;
+        tsserver.enable = true;
+        volar.enable = true;
+        zls.enable = true;
+        gopls.enable = true;
+
         lexical = {
           enable = true;
           cmd = ["${pkgs.lexical}/libexec/start_lexical.sh"];
         };
-        gopls.enable = true;
+
         rust-analyzer = {
           enable = true;
           installCargo = true;
           installRustc = true;
         };
+
         efm = {
           enable = true;
           extraOptions.init_options = {
