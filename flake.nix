@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs-small.url = "nixpkgs/nixos-unstable-small";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -30,6 +31,7 @@
     agenix,
     nix-darwin,
     nixos-wsl,
+    nixpkgs-small,
     ...
   } @ inputs: let
     systemSettings = {
@@ -54,6 +56,10 @@
       inherit system;
       config = {allowUnfree = true;};
     };
+    pkgs-small = import nixpkgs-small {
+      inherit system;
+      config = {allowUnfree = true;};
+    };
   in {
     nixosConfigurations = {
       achird = lib.nixosSystem {
@@ -62,6 +68,7 @@
           inherit inputs;
           inherit systemSettings;
           inherit userSettings;
+          inherit pkgs-small;
         };
         modules = [
           ./hosts/achird
@@ -88,6 +95,7 @@
           inherit inputs;
           inherit systemSettings;
           inherit userSettings;
+          inherit pkgs-small;
         };
         modules = [
           ./users/emily/home.nix

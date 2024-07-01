@@ -454,6 +454,21 @@
         "url": "https://github.com/NixOS/nixpkgs/archive/eb9ceca17df2ea50a250b6b27f7bf6ab0186f198.tar.gz"
       }
     },
+    "nixpkgs-small": {
+      "locked": {
+        "lastModified": 1719540504,
+        "narHash": "sha256-SIbmh3yyPmzLI+qHlMC/pJVfo4ISFu1OORo5YLFk8o0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "33be72b31b7cc5a0b43cc3b6c005cf4e4d47d899",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixos-unstable-small",
+        "type": "indirect"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1718276985,
@@ -537,6 +552,7 @@
         "nix-gaming": "nix-gaming",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_4",
+        "nixpkgs-small": "nixpkgs-small",
         "nixvim": "nixvim"
       }
     },
