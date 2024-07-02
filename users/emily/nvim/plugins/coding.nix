@@ -36,7 +36,7 @@
       servers = {
         clangd.enable = true;
         nixd.enable = true;
-        eslint.enable = true;
+        biome.enable = true;
         jsonls.enable = true;
         pylsp.enable = true;
         tsserver.enable = true;

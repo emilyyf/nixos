@@ -12,7 +12,6 @@
         protontricks
         mangohud
         gamescope
-        prismlauncher
         lutris
         gnome3.adwaita-icon-theme
         r2modman
@@ -43,6 +42,7 @@
     )
     ++ (with pkgs-small; [
       xivlauncher
+      prismlauncher
     ]);
   # ++ (with inputs; [
   #   nix-citizen.packages.${system}.star-citizen
