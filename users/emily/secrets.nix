@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  age,
-  ...
-}: {
+{...}: {
   age.identityPaths = ["/home/emily/.ssh/agekey"];
   age.secretsDir = "/run/agenix";
   age.secrets = {

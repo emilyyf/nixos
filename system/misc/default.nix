@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}: {
+{...}: {
   imports = [
     ./1password.nix
     ./games.nix

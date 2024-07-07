@@ -1,11 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  userSettings,
-  systemSettings,
-  ...
-}: {
+{userSettings, ...}: {
   programs._1password.enable = true;
   programs._1password-gui = {
     enable = true;

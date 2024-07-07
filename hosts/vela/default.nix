@@ -8,12 +8,17 @@
   ];
   services.nix-daemon.enable = true;
   nix.settings.experimental-features = "nix-command flakes";
-  system.configurationRevision = self.rev or self.dirtyRev or null;
-  system.stateVersion = 4;
   nixpkgs.hostPlatform = systemSettings.system;
-  system.defaults.dock.autohide = true;
-  system.keyboard.enableKeyMapping = true;
-  system.keyboard.remapCapsLockToEscape = true;
+
+  system = {
+    configurationRevision = self.rev or self.dirtyRev or null;
+    stateVersion = 4;
+    defaults.dock.autohide = true;
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToEscape = true;
+    };
+  };
 
   homebrew = {
     enable = true;
@@ -26,7 +31,6 @@
       "firefox"
       "kitty"
       "1password"
-      "insomnia"
     ];
   };
 }

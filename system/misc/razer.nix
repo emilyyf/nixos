@@ -1,13 +1,12 @@
 {
-  config,
   pkgs,
-  inputs,
   userSettings,
-  systemSettings,
   ...
 }: {
-  hardware.openrazer.enable = true;
-  hardware.openrazer.users = [userSettings.username];
+  hardware.openrazer = {
+    enable = true;
+    users = [userSettings.username];
+  };
 
   environment.systemPackages = with pkgs; [
     polychromatic

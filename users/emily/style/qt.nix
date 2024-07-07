@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  age,
-  ...
-}: {
+{pkgs, ...}: {
   qt = {
     enable = true;
     platformTheme.name = "gtk";

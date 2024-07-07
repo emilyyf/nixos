@@ -1,11 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  userSettings,
-  systemSettings,
-  ...
-}: {
+{config, ...}: {
   programs.ssh = {
     enable = true;
     matchBlocks = {

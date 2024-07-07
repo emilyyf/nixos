@@ -1,11 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  userSettings,
-  systemSettings,
-  ...
-}: {
+{systemSettings, ...}: {
   programs.zellij = {
     enable = true;
     enableZshIntegration = true;

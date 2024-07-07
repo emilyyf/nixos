@@ -36,28 +36,32 @@
       else []
     );
 
-  home.username = userSettings.username;
-  home.homeDirectory =
-    (
-      if systemSettings.system == "x86_64-darwin"
-      then "/Users/"
-      else "/home/"
-    )
-    + userSettings.username;
+  home = {
+    username = userSettings.username;
+    homeDirectory =
+      (
+        if systemSettings.system == "x86_64-darwin"
+        then "/Users/"
+        else "/home/"
+      )
+      + userSettings.username;
 
-  home.packages = with pkgs; [
-    nerdfonts
-    alejandra
-    unzip
-  ];
+    packages = with pkgs; [
+      nerdfonts
+      alejandra
+      unzip
+    ];
 
-  programs.gpg.enable = true;
-
-  home.sessionVariables = {
-    EDITOR = userSettings.editor;
-    FLAKE = config.home.homeDirectory + "/.dotfiles/nixos";
+    sessionVariables = {
+      EDITOR = userSettings.editor;
+      FLAKE = config.home.homeDirectory + "/.dotfiles/nixos";
+    };
   };
 
-  programs.home-manager.enable = true;
+  programs = {
+    gpg.enable = true;
+    home-manager.enable = true;
+  };
+
   home.stateVersion = "23.11"; # DO NOT CHANGE
 }

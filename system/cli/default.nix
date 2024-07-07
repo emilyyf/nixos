@@ -11,34 +11,30 @@
     ]
     else [];
 
-  environment.systemPackages = with pkgs; [
-    vim
-    neovim
-    zellij
-    git
-    curl
-    wget
-    gnumake
-    stow
-    clang
-    ripgrep
-    fzf
-    fd
-    dust
-    eza
-    zoxide
-    btop
-    bottom
-    bat
-    delta
-    tldr
-    onefetch
-    fastfetch
-    cpufetch
-    gping
-    nix-prefetch-git
-    inputs.agenix.packages."${system}".default
-  ];
+  environment.systemPackages =
+    (with pkgs; [
+      neovim
+      zellij
+      git
+      curl
+      wget
+      ripgrep
+      fzf
+      fd
+      dust
+      eza
+      zoxide
+      btop
+      bottom
+      bat
+      delta
+      tldr
+      gping
+      nix-prefetch-git
+    ])
+    ++ [
+      inputs.agenix.packages."${pkgs.system}".default
+    ];
 
   programs.nh = {
     enable = true;

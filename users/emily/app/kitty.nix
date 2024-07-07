@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  age,
-  ...
-}: {
+{...}: {
   programs.kitty = {
     enable = true;
     theme = "Catppuccin-Macchiato";

@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  age,
-  ...
-}: {
+{pkgs, ...}: {
   targets.genericLinux.enable = true;
   xdg.enable = true;
 

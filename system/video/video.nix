@@ -1,5 +1,8 @@
 {config, ...}: {
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+    videoDrivers = ["nvidia"];
+  };
 
   programs.xwayland.enable = true;
 
@@ -7,8 +10,6 @@
     enable = true;
     driSupport32Bit = true;
   };
-
-  services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
     modesetting.enable = true;

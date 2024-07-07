@@ -33,11 +33,9 @@
         discord
         telegram-desktop
         tutanota-desktop
-        spectacle
         scrot
         xsel
         xclip
-        insomnia
       ]
     )
     ++ (with pkgs-small; [
